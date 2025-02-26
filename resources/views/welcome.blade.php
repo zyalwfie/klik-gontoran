@@ -14,7 +14,7 @@
                 </a>
                 <a href="https://gontoran.digitaldesa.id/"
                     class="flex-grow text-center rounded border-primary-accent-borders border text-primary-accent-text px-4 py-2 transition hover:bg-primary-accent-item hover:border-transparent focus-visible:outline-primary-accent-borders focus-visible:outline-2">
-                    Profile Desa
+                    Halaman Admin
                 </a>
             </div>
         </div>
