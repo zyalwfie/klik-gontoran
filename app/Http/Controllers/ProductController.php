@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
-class FrontController extends Controller
+class ProductController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        return view('umkm-lists');
     }
 }

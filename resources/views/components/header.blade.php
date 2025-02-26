@@ -14,9 +14,10 @@
                 class="hover:bg-primary-accent-bg transition border hover:border-primary-accent-borders px-4 py-1 rounded capitalize {{ Route::currentRouteName() == 'home' ? 'bg-primary-accent-bg border-primary-accent-borders' : 'border-transparent' }} focus-visible:outline-primary-accent-borders focus-visible:outline-2">
                 Beranda
             </x-nav-link>
-            <x-nav-link href="{{ route('lists') }}"
-                class="hover:bg-primary-accent-bg transition border hover:border-primary-accent-borders px-4 py-1 rounded capitalize {{ Route::currentRouteName() == 'lists' ? 'bg-primary-accent-bg border-primary-accent-borders' : 'border-transparent' }} focus-visible:outline-primary-accent-borders focus-visible:outline-2">Daftar
-                UMKM</x-nav-link>
+            <x-nav-link href="{{ route('product.index') }}"
+                class="hover:bg-primary-accent-bg transition border hover:border-primary-accent-borders px-4 py-1 rounded capitalize {{ Route::currentRouteName() == 'product.index' ? 'bg-primary-accent-bg border-primary-accent-borders' : 'border-transparent' }} focus-visible:outline-primary-accent-borders focus-visible:outline-2">
+                Daftar UMKM
+            </x-nav-link>
         </nav>
         <button
             class="bg-primary-accent-item-2 hover:bg-primary-accent-item px-6 py-2 text-primary-accent-text-2 rounded capitalize transition focus-visible:outline-primary-accent-borders focus-visible:outline-2">detail
@@ -24,13 +25,13 @@
     </div>
 
     <div id="responsive-navbar"
-        class="fixed top-28 inset-x-4 md:inset-x-8 z-40 min-h-max bg-primary-accent-bg p-8 -translate-y-[200%] opacity-0 transition rounded shadow-lg border border-primary-accent-borders shadow-primary-gray-borders">
+        class="fixed top-28 inset-x-4 md:inset-x-16 z-40 min-h-max bg-primary-accent-bg p-8 -translate-y-[200%] opacity-0 transition rounded shadow-lg border border-primary-accent-borders shadow-primary-gray-borders">
         <nav class="flex flex-col gap-y-4">
             <x-nav-link href="{{ route('home') }}"
                 class="text-primary-accent-text capitalize pb-4 border-b border-primary-accent-borders focus-visible:outline-primary-accent-borders focus-visible:outline-2">
                 Beranda
             </x-nav-link>
-            <x-nav-link href="{{ route('lists') }}"
+            <x-nav-link href="{{ route('product.index') }}"
                 class="text-primary-accent-text capitalize pb-4 border-b border-primary-accent-borders focus-visible:outline-primary-accent-borders focus-visible:outline-2">
                 Daftar UMKM
             </x-nav-link>

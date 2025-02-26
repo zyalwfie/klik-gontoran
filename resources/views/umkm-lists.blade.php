@@ -8,10 +8,11 @@
             <div class="mx-auto max-w-2xl lg:mx-0">
                 <h2
                     class="text-pretty text-primary-accent-text-2 text-4xl font-semibold tracking-tight sm:text-5xl text-transparent bg-gradient-to-r from-primary-accent-solid to-primary-accent-text bg-clip-text">
-                    Daftar
-                    UMKM</h2>
-                <p class="mt-2 text-lg/8 text-primary-gray-text">Di bawah adalah daftar UMKM yang tersedia di Desa
-                    Gontoran.</p>
+                    Daftar UMKM
+                </h2>
+                <p class="mt-2 text-lg/8 text-primary-gray-text">
+                    Di bawah adalah daftar UMKM yang tersedia di Desa Gontoran.
+                </p>
             </div>
             <div
                 class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-primary-accent-borders pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
@@ -24,13 +25,15 @@
                             class="relative z-10 rounded-full px-3 py-1.5 font-medium bg-primary-accent-item-2 text-primary-accent-textr hover:bg-primary-accent-item">Keripik</a>
                     </div>
                     <div class="group relative">
-                        <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
+                        <h3
+                            class="mt-5 text-lg/6 font-semibold text-primary-gray-text-2 group-hover:text-primary-gray-text">
                             <a href="#">
                                 <span class="absolute inset-0"></span>
                                 Keripik Talas
                             </a>
                         </h3>
-                        <p class="mt-5 line-clamp-3 text-sm/6 text-gray-600">Diolah oleh ibu Mu'addah beserta karyawannya</p>
+                        <p class="mt-3 line-clamp-3 text-sm/6 text-primary-gray-text">Diolah oleh ibu Mu'addah beserta
+                            karyawannya</p>
                     </div>
                     <div class="relative mt-8 flex items-center gap-x-4">
                         <img src="https://avatar.iran.liara.run/public" alt=""
