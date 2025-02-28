@@ -11,10 +11,13 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         Category::create([
-            'name' => 'keripik',
+            'name' => 'Keripik',
+            'slug' => 'keripik'
         ]);
+
         Category::create([
-            'name' => 'kerupuk',
+            'name' => 'Kerupuk',
+            'slug' => 'kerupuk',
         ]);
     }
 }
