@@ -11,11 +11,11 @@
     <div class="hidden lg:flex items-center justify-stretch flex-grow">
         <nav class="flex flex-grow justify-center items-center gap-x-4">
             <x-nav-link href="{{ route('home') }}"
-                class="hover:bg-primary-accent-bg transition border hover:border-primary-accent-borders px-4 py-1 rounded capitalize {{ Route::currentRouteName() == 'home' ? 'bg-primary-accent-bg border-primary-accent-borders' : 'border-transparent' }} focus-visible:outline-primary-accent-borders focus-visible:outline-2">
+                class="hover:bg-primary-accent-bg transition border hover:border-primary-accent-borders px-4 py-1 rounded capitalize {{ request()->routeIs('home') ? 'bg-primary-accent-bg border-primary-accent-borders' : 'border-transparent' }} focus-visible:outline-primary-accent-borders focus-visible:outline-2">
                 Beranda
             </x-nav-link>
             <x-nav-link href="{{ route('product.index') }}"
-                class="hover:bg-primary-accent-bg transition border hover:border-primary-accent-borders px-4 py-1 rounded capitalize {{ Route::currentRouteName() == 'product.index' ? 'bg-primary-accent-bg border-primary-accent-borders' : 'border-transparent' }} focus-visible:outline-primary-accent-borders focus-visible:outline-2">
+                class="hover:bg-primary-accent-bg transition border hover:border-primary-accent-borders px-4 py-1 rounded capitalize {{ request()->routeIs('product.*') ? 'bg-primary-accent-bg border-primary-accent-borders' : 'border-transparent' }} focus-visible:outline-primary-accent-borders focus-visible:outline-2">
                 Daftar UMKM
             </x-nav-link>
         </nav>

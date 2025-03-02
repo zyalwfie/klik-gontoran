@@ -13,7 +13,7 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
-            'image' => fake()->imageUrl(),
+            'image' => 'https://placehold.co/600x400/EEE/31343C?text=Montserrat&font=montserrat',
             'title' => fake()->sentence(),
             'category_id' => Category::factory(),
             'content' => fake()->paragraph(),
