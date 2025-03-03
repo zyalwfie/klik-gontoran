@@ -1,5 +1,5 @@
 <header
-    class="py-2 px-4 md:px-16 lg:px-32 xl:px-64 flex items-center fixed inset-x-0 top-0 backdrop-blur bg-primary-accent-bg/70 shadow-lg shadow-primary-gray-borders z-10">
+    class="py-2 px-4 md:px-16 lg:px-32 xl:px-64 flex items-center fixed inset-x-0 top-0 backdrop-blur bg-primary-accent-bg/70 shadow-lg shadow-primary-gray-borders z-50">
     <div class="flex items-center">
         <img src="{{ asset('img/logo.png') }}" alt="Klik Gontoran" class="size-16">
         <a href="{{ route('home') }}"
@@ -15,7 +15,7 @@
                 Beranda
             </x-nav-link>
             <x-nav-link href="{{ route('product.index') }}"
-                class="hover:bg-primary-accent-bg transition border hover:border-primary-accent-borders px-4 py-1 rounded capitalize {{ request()->routeIs('product.*') || request()->routeIs('category.*') ? 'bg-primary-accent-bg border-primary-accent-borders' : 'border-transparent' }} focus-visible:outline-primary-accent-borders focus-visible:outline-2">
+                class="hover:bg-primary-accent-bg transition border hover:border-primary-accent-borders px-4 py-1 rounded capitalize {{ request()->routeIs('product.*') ? 'bg-primary-accent-bg border-primary-accent-borders' : 'border-transparent' }} focus-visible:outline-primary-accent-borders focus-visible:outline-2">
                 Daftar UMKM
             </x-nav-link>
         </nav>
