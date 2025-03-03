@@ -40,10 +40,8 @@
                                 class="size-10 rounded-full bg-gray-50">
                             <div class="text-sm/6">
                                 <p class="font-semibold text-gray-900">
-                                    <a href="#">
-                                        <span class="absolute inset-0"></span>
-                                        {{ $product->owner }}
-                                    </a>
+                                    <span class="absolute inset-0"></span>
+                                    {{ $product->owner }}
                                 </p>
                                 <p class="text-gray-600">Owner</p>
                             </div>

@@ -12,7 +12,7 @@ class ProductController extends Controller
         $title = 'Daftar UMKM';
         $h2Title = 'Daftar UMKM';
         $h2Description = 'Di bawah adalah daftar UMKM yang tersedia di Desa Gontoran.';
-        $products = Product::with(['category'])->latest()->get();
+        $products = Product::latest()->get();
 
         return view('product.index', compact('title', 'h2Title', 'h2Description', 'products'));
     }
