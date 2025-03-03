@@ -18,11 +18,11 @@
                 class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-primary-accent-borders pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                 @foreach ($products as $product)
                     <article class="flex max-w-xl flex-col items-start justify-between">
-                        <div class="overflow-hidden shadow shadow-primary-accent-item-3">
+                        <div class="overflow-hidden rounded shadow shadow-primary-accent-item-3">
                             <img src="{{ $product->image }}" alt="Thumbnail" class="rounded">
                         </div>
                         <div class="mt-8 flex items-center gap-x-4 text-xs">
-                            <a href="#"
+                            <a href="{{ route('category.index', $product->category->slug) }}"
                                 class="relative z-10 rounded-full px-3 py-1.5 font-medium bg-primary-accent-item-2 text-primary-accent-textr hover:bg-primary-accent-item">{{ $product->category->name }}</a>
                         </div>
                         <div class="group relative">

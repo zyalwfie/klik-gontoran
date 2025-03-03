@@ -11,7 +11,7 @@ class Category extends Model
 {
     use HasFactory, Sluggable;
 
-    protected $guarded = ['id'];
+    protected $fillable = ['name', 'slug'];
 
     public function sluggable(): array
     {

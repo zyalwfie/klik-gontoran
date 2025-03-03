@@ -11,4 +11,5 @@ Route::get('/', [FrontController::class, 'index'])->name('home');
 Route::prefix('daftar-umkm')->group(function (){
     Route::get('/', [ProductController::class, 'index'])->name('product.index');
     Route::get('/{product:slug}', [ProductController::class, 'show'])->name('product.show');
+    Route::get('/kategori/{category:slug}', [CategoryController::class, 'index'])->name('category.index');
 });

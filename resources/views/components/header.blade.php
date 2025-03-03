@@ -15,7 +15,7 @@
                 Beranda
             </x-nav-link>
             <x-nav-link href="{{ route('product.index') }}"
-                class="hover:bg-primary-accent-bg transition border hover:border-primary-accent-borders px-4 py-1 rounded capitalize {{ request()->routeIs('product.*') ? 'bg-primary-accent-bg border-primary-accent-borders' : 'border-transparent' }} focus-visible:outline-primary-accent-borders focus-visible:outline-2">
+                class="hover:bg-primary-accent-bg transition border hover:border-primary-accent-borders px-4 py-1 rounded capitalize {{ request()->routeIs('product.*') || request()->routeIs('category.*') ? 'bg-primary-accent-bg border-primary-accent-borders' : 'border-transparent' }} focus-visible:outline-primary-accent-borders focus-visible:outline-2">
                 Daftar UMKM
             </x-nav-link>
         </nav>
