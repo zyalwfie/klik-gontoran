@@ -19,10 +19,10 @@
                 Daftar UMKM
             </x-nav-link>
         </nav>
-        <button
+        <a target="blank" href="https://gontoran.digitaldesa.id/"
             class="bg-primary-accent-item-2 hover:bg-primary-accent-item px-6 py-2 text-primary-accent-text-2 rounded capitalize transition focus-visible:outline-primary-accent-borders focus-visible:outline-2">
             Profil Desa
-        </button>
+        </a>
     </div>
 
     <div id="responsive-navbar"
