@@ -16,7 +16,7 @@
             </div>
             <div class="mx-auto mt-10 border-t border-primary-accent-borders">
                 <div class="mt-10">
-                    <form class="max-w-md mx-auto" action="{{ route('product.index') }}">
+                    <form class="max-w-md lg:mx-auto" action="{{ route('product.index') }}">
                         @if (request('category'))
                             <input type="hidden" name="category" value="{{ request('category') }}">
                         @endif
@@ -37,7 +37,7 @@
                                 class="text-primary-accent-text absolute end-2.5 bottom-2.5 bg-primary-accent-item-2 hover:bg-primary-accent-item focus:ring-4 focus:outline-none focus:ring-primary-accent-borders font-medium rounded-lg text-sm px-4 py-2">Search</button>
                         </div>
                     </form>
-                    {{-- {{ $products->links() }} --}}
+                    {{ $products->links() }}
                 </div>
                 <div
                     class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-primary-accent-borders pt-5 sm:pt-10 lg:mx-0 lg:max-w-none lg:grid-cols-3">
