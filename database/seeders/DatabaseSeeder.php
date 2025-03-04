@@ -16,8 +16,11 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class
         ]);
 
-        Product::factory(100)->recycle([
-            Category::all(),
-        ])->create();
+        // * dummy data for product
+        // Product::factory(10)
+        //     ->recycle([
+        //         Category::all(),
+        //     ])
+        //     ->create();
     }
 }

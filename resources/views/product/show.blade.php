@@ -9,16 +9,16 @@
                 <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-primary-accent-text-2">
                     {{ $product->title }}
                 </h2>
-                <p class="mb-4 text-primary-gray-text">
-                    {{ $product->content }}
-                </p>
+                <div class="mb-4 text-primary-gray-text">
+                    {!! $product->content !!}
+                </div>
             </div>
             <div class="grid grid-cols-2 gap-4 mt-8">
                 <img class="w-full rounded-lg"
-                    src="{{ $product->image }}"
+                    src="{{ Storage::url($product->image) }}"
                     alt="{{ $product->title }}">
                 <img class="mt-4 w-full lg:mt-10 rounded-lg"
-                    src="{{ $product->image }}"
+                    src="{{ Storage::url($product->image) }}"
                     alt="{{ $product->title }}">
             </div>
         </div>

@@ -8,11 +8,11 @@
             <h1 class="text-4xl font-bold font-montserrat">Selamat datang di Klik Gontoran</h1>
             <p>Kami menyediakan berbagai informasi dan layanan terbaik untuk mendukung usaha dan komunitas lokal.</p>
             <div class="flex gap-x-4">
-                <a href="#"
+                <a href="{{ route('product.index') }}"
                     class="flex-grow text-center rounded border-primary-accent-borders bg-primary-accent-item-2 text-primary-accent-text px-4 py-2 transition hover:bg-primary-accent-item focus-visible:outline-primary-accent-borders focus-visible:outline-2">
                     Detail UMKM
                 </a>
-                <a href="https://gontoran.digitaldesa.id/"
+                <a href="/admin"
                     class="flex-grow text-center rounded border-primary-accent-borders border text-primary-accent-text px-4 py-2 transition hover:bg-primary-accent-item hover:border-transparent focus-visible:outline-primary-accent-borders focus-visible:outline-2">
                     Halaman Admin
                 </a>

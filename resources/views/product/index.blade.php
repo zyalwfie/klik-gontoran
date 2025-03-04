@@ -44,7 +44,7 @@
                     @forelse ($products as $product)
                         <article class="flex max-w-xl flex-col items-start justify-between">
                             <div class="overflow-hidden rounded shadow shadow-primary-accent-item-3">
-                                <img src="{{ $product->image }}" alt="Thumbnail" class="rounded">
+                                <img src="{{ Storage::url($product->image) }}" alt="Thumbnail" class="rounded">
                             </div>
                             <div class="mt-8 flex items-center gap-x-4 text-xs">
                                 <a href="?category={{ $product->category->slug }}"
@@ -58,7 +58,7 @@
                                         {{ $product->title }}
                                     </a>
                                 </h3>
-                                <p class="mt-3 line-clamp-2 text-sm/6 text-primary-gray-text">{{ $product->content }}</p>
+                                <div class="mt-3 line-clamp-2 text-sm/6 text-primary-gray-text">{!! $product->content !!}</div>
                             </div>
                             <div class="relative mt-8 flex items-center gap-x-4">
                                 <img src="https://avatar.iran.liara.run/public" alt=""
@@ -73,23 +73,45 @@
                             </div>
                         </article>
                     @empty
-                        <section class="col-span-full">
-                            <div class="py-8 px-4 mx-auto lg:py-16 lg:px-6">
-                                <div class="text-center">
-                                    <p
-                                        class="mb-4 text-3xl tracking-tight font-bold text-gray-900 md:text-4xl font-montserrat">
-                                        Tidak ada UMKM yang tersedia.
-                                    </p>
-                                    <p class="mb-4 text-lg font-light text-primary-gray-text">Maaf, kami tidak dapat
-                                        menemukan
-                                        jajan yang anda cari. Anda bisa menemukan banyak jajan yang bisa dijelajahi di
-                                        halaman daftar UMKM.</p>
-                                    <a href="{{ route('product.index') }}"
-                                        class="inline-flex text-primary-accent-text bg-primary-accent-item-2 hover:bg-primary-accent-item focus:ring-4 focus:outline-none focus:ring-primary-gray-borders font-medium rounded-lg text-sm px-5 py-2.5 text-center my-4">Lihat
-                                        daftar UMKM</a>
+                        @if (request()->has('search'))
+                            <section class="col-span-full">
+                                <div class="py-8 px-4 mx-auto lg:py-16 lg:px-6">
+                                    <div class="text-center">
+                                        <p
+                                            class="mb-4 text-3xl tracking-tight font-bold text-gray-900 md:text-4xl font-montserrat">
+                                            Tidak ada hasil untuk "{{ request('search') }}".
+                                        </p>
+                                        <p class="mb-4 text-lg font-light text-primary-gray-text">
+                                            Maaf, kami tidak dapat menemukan produk yang Anda cari. Silakan coba kata kunci
+                                            lain atau lihat daftar UMKM kami.
+                                        </p>
+                                        <a href="{{ route('product.index') }}"
+                                            class="inline-flex text-primary-accent-text bg-primary-accent-item-2 hover:bg-primary-accent-item focus:ring-4 focus:outline-none focus:ring-primary-gray-borders font-medium rounded-lg text-sm px-5 py-2.5 text-center my-4">
+                                            Lihat daftar UMKM
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        </section>
+                            </section>
+                        @else
+                            <section class="col-span-full">
+                                <div class="py-8 px-4 mx-auto lg:py-16 lg:px-6">
+                                    <div class="text-center">
+                                        <p
+                                            class="mb-4 text-3xl tracking-tight font-bold text-gray-900 md:text-4xl font-montserrat">
+                                            Maaf UMKM belum tersedia.
+                                        </p>
+                                        <p class="mb-4 text-lg font-light text-primary-gray-text">
+                                            Untuk sementara ini, kami belum memiliki UMKM yang tersedia. Anda bisa melihat
+                                            profile desa terlebih dahulu.
+                                        </p>
+                                        <a href="https://gontoran.digitaldesa.id" target="_blank"
+                                            class="inline-flex text-primary-accent-text bg-primary-accent-item-2 hover:bg-primary-accent-item focus:ring-4 focus:outline-none focus:ring-primary-gray-borders font-medium rounded-lg text-sm px-5 py-2.5 text-center my-4">
+                                            Profile Desa
+                                        </a>
+                                    </div>
+                                </div>
+                            </section>
+                        @endif
                     @endforelse
                 </div>
             </div>
