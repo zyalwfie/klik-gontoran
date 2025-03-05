@@ -22,5 +22,7 @@ class DatabaseSeeder extends Seeder
         //         Category::all(),
         //     ])
         //     ->create();
+
+        User::factory(3)->create();
     }
 }

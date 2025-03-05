@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\CategoryResource\Pages;
 use App\Models\Category;
+use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -12,6 +13,8 @@ use Filament\Tables\Table;
 
 class CategoryResource extends Resource
 {
+    protected static ?string $title = 'All Categories';
+
     protected static ?string $model = Category::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-folder-open';
@@ -22,9 +25,9 @@ class CategoryResource extends Resource
     {
         return $form
             ->schema([
-                TextColumn::make('name')
+                Forms\Components\TextInput::make('name')
                     ->label('Name')
-                    ->rules(['required', 'string', 'max:255'])
+                    ->required(),
             ]);
     }
 

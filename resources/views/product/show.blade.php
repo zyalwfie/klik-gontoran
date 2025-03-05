@@ -26,7 +26,7 @@
             </div>
             <div class="grid grid-cols-2 gap-4 mt-8">
                 @foreach ($product->image as $item)
-                    <img class="@if ($loop->last) mt-4 @endif w-full rounded-lg"
+                    <img class="@if ($loop->last) mt-4 @endif size-52 object-cover rounded-lg"
                         src="{{ Storage::url($item) }}" alt="{{ $product->title }}">
                 @endforeach
             </div>

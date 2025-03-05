@@ -19,15 +19,28 @@
             </div>
         </div>
 
-        <div class="border-2 shadow-2xl shadow-primary-accent-item-3 border-primary-accent-borders p-1 rounded-full">
-            <img src="{{ asset('img/pic1.jpeg') }}" alt="Thumbnail" class="size-64 xl:size-80 object-cover rounded-full">
-        </div>
+        @if ($heroPhoto)
+            <div class="border-2 shadow-2xl shadow-primary-accent-item-3 border-primary-accent-borders p-1 rounded-full">
+                <img src="{{ Storage::url($heroPhoto->name) }}" alt="Hero Photo"
+                    class="size-64 xl:size-80 object-cover rounded-full">
+            </div>
+        @else
+            <div>
+                <img src="{{ asset('img/default-img.svg') }}" alt="Hero Photo" class="size-64 xl:size-80 object-cover">
+            </div>
+        @endif
     </section>
 
     <section class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-36">
-        <div class="border-2 shadow-2xl shadow-primary-accent-item-3 border-primary-accent-borders p-1 rounded">
-            <img src="{{ asset('img/pic1.jpeg') }}" alt="Thumbnail" class="object-cover rounded">
-        </div>
+        @if ($aboutPhoto)
+            <div class="border-2 shadow-2xl shadow-primary-accent-item-3 border-primary-accent-borders p-1 rounded">
+                <img src="{{ Storage::url($aboutPhoto->name) }}" alt="Poto Cerita Kami" class="object-cover rounded">
+            </div>
+        @else
+            <div>
+                <img src="{{ asset('img/default-img.svg') }}" alt="Poto Cerita Kami" class="object-cover rounded">
+            </div>
+        @endif
 
         <div class="flex flex-col gap-y-2">
             <h3 class="bg-white font-montserrat text-3xl font-bold">
@@ -41,27 +54,46 @@
         </div>
     </section>
 
-    <section class="flex flex-col gap-y-4">
+    <section class="flex flex-col gap-y-4 mb-36">
         <h3 class="bg-white font-montserrat text-3xl font-bold">Galeri</h3>
         <div class="slider" reverse="true"
             style="
         --height: 200px;
         --width: 200px;
-        --quantity: 6;
+        --quantity: {{ $photos->count() ? $photos->count() : 6 }};
         ">
             <div class="list">
-                <div class="item" style="--position: 1"><img src="{{ asset('img/pic1.jpeg') }}" alt="Thumbnail"
-                        class="rounded"></div>
-                <div class="item" style="--position: 2"><img src="{{ asset('img/pic3.jpeg') }}" alt="Thumbnail"
-                        class="rounded"></div>
-                <div class="item" style="--position: 3"><img src="{{ asset('img/pic2.jpeg') }}" alt="Thumbnail"
-                        class="rounded"></div>
-                <div class="item" style="--position: 4"><img src="{{ asset('img/pic3.jpeg') }}" alt="Thumbnail"
-                        class="rounded"></div>
-                <div class="item" style="--position: 5"><img src="{{ asset('img/pic2.jpeg') }}" alt="Thumbnail"
-                        class="rounded"></div>
-                <div class="item" style="--position: 6"><img src="{{ asset('img/pic1.jpeg') }}" alt="Thumbnail"
-                        class="rounded"></div>
+                @forelse ($photos as $photo)
+                    <div class="item" style="--position: {{ $loop->iteration }}">
+                        <img src="{{ Storage::url($photo->name) }}" alt="Gallery Photo"
+                            class="size-40 rounded object-cover">
+                    </div>
+                @empty
+                    <div class="item" style="--position: 1">
+                        <img src="{{ asset('img/default-img.svg') }}" alt="Gallery Photo"
+                            class="size-40 rounded object-cover">
+                    </div>
+                    <div class="item" style="--position: 2">
+                        <img src="{{ asset('img/default-img.svg') }}" alt="Gallery Photo"
+                            class="size-40 rounded object-cover">
+                    </div>
+                    <div class="item" style="--position: 3">
+                        <img src="{{ asset('img/default-img.svg') }}" alt="Gallery Photo"
+                            class="size-40 rounded object-cover">
+                    </div>
+                    <div class="item" style="--position: 4">
+                        <img src="{{ asset('img/default-img.svg') }}" alt="Gallery Photo"
+                            class="size-40 rounded object-cover">
+                    </div>
+                    <div class="item" style="--position: 5">
+                        <img src="{{ asset('img/default-img.svg') }}" alt="Gallery Photo"
+                            class="size-40 rounded object-cover">
+                    </div>
+                    <div class="item" style="--position: 6">
+                        <img src="{{ asset('img/default-img.svg') }}" alt="Gallery Photo"
+                            class="size-40 rounded object-cover">
+                    </div>
+                @endforelse
             </div>
         </div>
     </section>
