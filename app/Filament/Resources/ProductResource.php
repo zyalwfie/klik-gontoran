@@ -39,7 +39,9 @@ class ProductResource extends Resource
                         '16:9',
                         '4:3',
                         '1:1',
-                    ]),
+                    ])
+                    ->multiple()
+                    ->maxParallelUploads(2),
                 Select::make('category_id')
                     ->label('Category')
                     ->relationship('category', 'name')

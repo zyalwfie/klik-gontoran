@@ -16,6 +16,10 @@ class Product extends Model
 
     protected $with = ['category'];
 
+    protected $casts = [
+        'image' => 'array'
+    ];
+
     public function sluggable(): array
     {
         return [

@@ -44,7 +44,7 @@
                     @forelse ($products as $product)
                         <article class="flex max-w-xl flex-col items-start justify-between">
                             <div class="overflow-hidden rounded shadow shadow-primary-accent-item-3">
-                                <img src="{{ Storage::url($product->image) }}" alt="Thumbnail" class="rounded">
+                                <img src="{{ Storage::url($product->image[0]) }}" alt="Thumbnail" class="rounded">
                             </div>
                             <div class="mt-8 flex items-center gap-x-4 text-xs">
                                 <a href="?category={{ $product->category->slug }}"
@@ -58,7 +58,8 @@
                                         {{ $product->title }}
                                     </a>
                                 </h3>
-                                <div class="mt-3 line-clamp-2 text-sm/6 text-primary-gray-text">{!! $product->content !!}</div>
+                                <div class="mt-3 line-clamp-2 text-sm/6 text-primary-gray-text">{!! $product->content !!}
+                                </div>
                             </div>
                             <div class="relative mt-8 flex items-center gap-x-4">
                                 <img src="https://avatar.iran.liara.run/public" alt=""
