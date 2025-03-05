@@ -20,7 +20,7 @@
         </div>
 
         <div class="border-2 shadow-2xl shadow-primary-accent-item-3 border-primary-accent-borders p-1 rounded-full">
-            <img src="{{ asset('img/pic1.jpeg') }}" alt="Thumbnail" class="size-64 object-cover rounded-full">
+            <img src="{{ asset('img/pic1.jpeg') }}" alt="Thumbnail" class="size-64 xl:size-80 object-cover rounded-full">
         </div>
     </section>
 
