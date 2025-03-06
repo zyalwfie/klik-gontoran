@@ -21,7 +21,11 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug');
             $table->text('content');
-            $table->string('owner');
+            $table->text('address');
+            $table->foreignId('owner_id')->constrained(
+                table: 'owners',
+                indexName: 'products_owner_id'
+            );
             $table->timestamps();
         });
     }

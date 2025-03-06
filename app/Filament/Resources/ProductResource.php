@@ -30,28 +30,31 @@ class ProductResource extends Resource
     {
         return $form
             ->schema([
-                FileUpload::make('image')
-                    ->label('Image')
-                    ->image()
-                    ->imageEditor()
-                    ->imageEditorAspectRatios([
-                        null,
-                        '16:9',
-                        '4:3',
-                        '1:1',
-                    ])
-                    ->multiple()
-                    ->maxParallelUploads(2),
                 Select::make('category_id')
                     ->label('Category')
                     ->relationship('category', 'name')
                     ->required(),
+                TextInput::make('address')
+                    ->label('Address')
+                    ->required(),
                 TextInput::make('title')
                     ->label('Title')
                     ->required(),
-                TextInput::make('owner')
+                Select::make('owner_id')
                     ->label('Owner')
+                    ->relationship('owner', 'name')
                     ->required(),
+                FileUpload::make('image')
+                    ->label('Image')
+                    ->image()
+                    ->imageResizeMode('cover')
+                    ->imageCropAspectRatio('1:1')
+                    ->imageResizeTargetWidth('500')
+                    ->imageResizeTargetHeight('500')
+                    ->multiple()
+                    ->minFiles(2)
+                    ->maxFiles(2)
+                    ->maxParallelUploads(2),
                 RichEditor::make('content')
                     ->label('Content')
                     ->required(),
@@ -72,7 +75,7 @@ class ProductResource extends Resource
                     ->label('Title')
                     ->searchable()
                     ->sortable(),
-                TextColumn::make('owner')
+                TextColumn::make('owner.name')
                     ->label('Owner')
                     ->searchable(),
             ])

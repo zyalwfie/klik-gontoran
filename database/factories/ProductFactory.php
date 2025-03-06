@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Category;
+use App\Models\Owner;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,8 @@ class ProductFactory extends Factory
             'title' => fake()->sentence(),
             'category_id' => Category::factory(),
             'content' => fake()->paragraph(),
-            'owner' => fake()->name()
+            'address' => fake()->address(),
+            'owner_id' => Owner::factory(),
         ];
     }
 }

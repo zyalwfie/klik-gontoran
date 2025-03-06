@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\Owner;
 use App\Models\Product;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -20,6 +21,7 @@ class DatabaseSeeder extends Seeder
         // Product::factory(10)
         //     ->recycle([
         //         Category::all(),
+        //         Owner::factory(),
         //     ])
         //     ->create();
 
