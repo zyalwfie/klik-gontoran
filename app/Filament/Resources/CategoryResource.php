@@ -35,6 +35,9 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
+                TextColumn::make('number')
+                    ->label('No.')
+                    ->rowIndex(),
                 TextColumn::make('name')
                     ->label('Name')
                     ->searchable()

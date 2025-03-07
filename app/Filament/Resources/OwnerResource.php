@@ -53,6 +53,9 @@ class OwnerResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('number')
+                    ->label('No.')
+                    ->rowIndex(),
                 Tables\Columns\ImageColumn::make('image')
                     ->label('Avatar')
                     ->defaultImageUrl(function ($record) {

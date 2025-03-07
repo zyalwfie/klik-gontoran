@@ -44,6 +44,9 @@ class PhotoResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('number')
+                    ->label('No.')
+                    ->rowIndex(),
                 Tables\Columns\ImageColumn::make('name')
                     ->label('Image'),
             ])

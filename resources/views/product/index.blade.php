@@ -44,8 +44,7 @@
 					@forelse ($products as $product)
 						<article class="flex max-w-xl flex-col items-start justify-between">
 							<div class="overflow-hidden rounded shadow shadow-primary-accent-item-3">
-								<img src="{{ Storage::url($product->image[0]) }}" alt="Thumbnail" class="rounded">
-								{{-- <img alt="Thumbnail" class="rounded" src="{{ $product->image }}"> --}}
+								<img alt="Thumbnail" class="rounded" src="{{ Storage::url($product->image[0]) }}">
 							</div>
 							<div class="mt-8 flex items-center text-xs">
 								<a
@@ -78,7 +77,18 @@
 								</div>
 							</div>
 							<div class="relative mt-8 flex items-center gap-x-4">
-								<img alt="" class="size-10 rounded-full bg-gray-50" src="https://avatar.iran.liara.run/public">
+								@if ($product->owner->image && Storage::exists($product->owner->image))
+									<img alt="{{ $product->owner->name }}" class="size-10 rounded-full bg-gray-50"
+										src="{{ Storage::url($product->owner->image) }}">
+								@else
+									@php
+										$defaultAvatar =
+										    $product->owner->gender->value === "male"
+										        ? asset("img/default-male-avatar.svg")
+										        : asset("img/default-female-avatar.svg");
+									@endphp
+									<img alt="{{ $product->owner->name }}" class="size-10 rounded-full bg-gray-50" src="{{ $defaultAvatar }}">
+								@endif
 								<div class="text-sm/6">
 									<p class="font-semibold text-gray-900">
 										<span class="absolute inset-0"></span>
