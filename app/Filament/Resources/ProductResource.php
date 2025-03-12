@@ -46,7 +46,6 @@ class ProductResource extends Resource
                     ->required(),
                 FileUpload::make('image')
                     ->disk('public')
-                    ->directory('public/storage')
                     ->label('Image')
                     ->image()
                     ->imageResizeMode('cover')
