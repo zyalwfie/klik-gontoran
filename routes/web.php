@@ -14,4 +14,6 @@ Route::prefix('daftar-umkm')->group(function () {
 
 Route::get('/run-symlink', function () {
     Artisan::call('storage:link');
+
+    return back();
 });
